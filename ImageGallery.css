@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+    /* box size remain same */
+    box-sizing: border-box;
+}
+
+.wrapper {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.conatiner {
+    height: 100%;
+    max-width: 1200px;
+    /* placed content exactly to the center */
+    /* Left and right has given a such a way that content should be in center */
+    margin: 0 auto;
+    /* border and content k bich ka space ko padding */
+    padding: 20px;
+}
+
+.conatiner h1 {
+    margin: 20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+.gallery {
+    /* flex horizontal placed hota hai by default */
+    display: flex;
+    /* lex wrap se if content placed nhi ho paate tho vo vertically placed ho jayenge */
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    width: 32%;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    /* image will hidden from both direction x and y axis */
+    overflow: hidden;
+}
+
+.card img {
+    /* height and width se card k size k jitna img ban jayega with card size and border */
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+    box-shadow: 0 0 20px #333;
+    object-fit: cover;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    /* drop shadow give effects on image */
+    filter: drop-shadow(0 0 10px #333);
+    transition: 0.3s;
+}
+
+.card:hover img {
+    filter: grayscale(0%);
+}
+
+.card figcaption {
+    /* content overlap karane k liye use karte hai */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 25px;
+    width: 100%;
+    height: 20%;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(0deg , rgba(0,0,0,0.5) 0% , rgba(255,255,255,0) 100%);
+    transition: 0.3s; 
+}
+
+.card:hover figcaption {
+    opacity: 1;
+    transform: scale(1.03);
+}
